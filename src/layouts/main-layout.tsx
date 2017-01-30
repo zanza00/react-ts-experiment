@@ -14,8 +14,8 @@ export class MainLayout extends React.Component<{}, {}> {
         <LayoutHeader>
           <LayoutTopNav>
             <LayoutTopNavLink href="/" isPrimary> Home </LayoutTopNavLink>
-            <LayoutTopNavLink href="/currency-converter"> Currency Converter </LayoutTopNavLink>
-            <LayoutTopNavLink href="/css-modules"> CSS Modules </LayoutTopNavLink>
+            <LayoutTopNavLink href="/hall-of-fame"> Hall of Fame </LayoutTopNavLink>
+            <LayoutTopNavLink href="/about"> About </LayoutTopNavLink>
           </LayoutTopNav>
         </LayoutHeader>
 
@@ -24,8 +24,7 @@ export class MainLayout extends React.Component<{}, {}> {
         </LayoutMain>
 
         <LayoutFooter>
-          2016 &copy; Piotr Witek<br />
-          <a href="https://github.com/piotrwitek/react-redux-typescript-starter-kit">Back to GitHub Repo</a>
+          Made with ♥
         </LayoutFooter>
       </div>
     );
