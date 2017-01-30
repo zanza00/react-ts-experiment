@@ -7,9 +7,12 @@ export function HomeContainer() {
     <article>
       <PageHero title="Heroes Voter"/>
       <PageSection className="o-container o-container--small">
-        <p>
-          Still need to do everything :P
-        </p>
+        <div className="pull-left">
+          <img src="assets/img/left.jpg" />
+        </div>
+        <div className="pull-right">
+          <img src="assets/img/right.jpg" />
+        </div>
         </PageSection>
     </article>
   );

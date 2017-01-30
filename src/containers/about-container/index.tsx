@@ -12,7 +12,7 @@ export function AboutContainer() {
         </p>
         <br />
         <div className="c-alert c-alert--info">
-          Let's Play'
+          Let's Play!
         </div>
       </PageSection>
       <br />
