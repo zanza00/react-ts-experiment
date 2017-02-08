@@ -12,7 +12,7 @@ export function HallFameContainer() {
   return (
     <article>
       <PageHero title="Hall of Fame" subtitle="Most voted heroes" />
-      <PageSection className="o-container o-container--small">
+      <PageSection className="">
         <ol>
           {topHeroes.map(hero => <li><a href={hero.heroPage}>{hero.name}</a> {hero.votes}</li>)}
         </ol>

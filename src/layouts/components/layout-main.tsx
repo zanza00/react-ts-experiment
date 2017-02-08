@@ -13,7 +13,7 @@ export function LayoutMain({className = '', children = undefined}) {
     className.toString(),
   );
   const innerClass = classNames(
-    'o-container o-container--medium',
+    '',
   );
 
   return (

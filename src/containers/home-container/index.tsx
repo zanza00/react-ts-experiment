@@ -14,7 +14,7 @@ export function HomeContainer() {
   return (
     <article>
       <PageHero title="Heroes Voter" />
-      <PageSection className="o-container o-container--small">
+      <PageSection className="">
         <HeroFaceOff heroes={heroBattle} />
       </PageSection>
     </article>

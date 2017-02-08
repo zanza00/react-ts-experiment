@@ -7,10 +7,9 @@ export function PageSection({className = '', children = undefined}) {
 
   const mainClass = classNames(
     className.toString(),
-    'o-grid',
   );
   const innerClass = classNames(
-    'o-grid__cell',
+    '',
   );
 
   return (

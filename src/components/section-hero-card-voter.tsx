@@ -4,27 +4,36 @@ import { hero } from '../models/hero'
 import csjs from 'csjs';
 import insertCss from 'insert-css';
 import colors from '../themes/colors';
+import { flexStyles } from '../themes/flex';
 
 interface ContainerStyles {
-  /** main content container */
-  container: string;
-  textCentered: string;
-  /** text with fancy highlight */
-  glowingText: string;
-  /** dark background with border */
-  darkBg: string;
-  /** elevate element using box-shadow */
-  effect__elevate: string;
-  /** hide element on mobile screen  */
-  effect__hideOnTablet: string;
-  /** show element on mobile screen  */
-  effect__showOnTablet: string;
+  left: string,
+  right: string,
+  title: string,
+  heroCard: string,
 }
 
 const containerStyles: ContainerStyles = csjs`
 
+.heroCard {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
 
+.left extends .heroCard{
+  background-color: red;
+}
 
+.right extends .heroCard{
+  background-color: blue;
+}
+
+.title {
+  color: ${colors.textColor}
+}
 `;
 
 insertCss(csjs.getCss(containerStyles));
@@ -46,25 +55,22 @@ export function HeroCardVoter({hero, position , className = ''}: params) {
 let cardPosition;
   switch (position) {
     case "left":
-      cardPosition = "left"
+      cardPosition = containerStyles.left
       break;
     case "right":
-      cardPosition = "right"
+      cardPosition = containerStyles.right
       break;
     default:
       break;
   }
 
   const mainClass = classNames(
-    className.toString(),
-    cardPosition
+    className.toString()
   );
   return (
-    <section className={mainClass}>
-      <div>
-        <h1>{hero.name}</h1>
+    <section className={[mainClass, cardPosition, flexStyles.flexItem].join(' ')}>
         <img src={hero.image} onClick={(event) => handleClick(hero, event)} />
-      </div>
+        <h2 className={containerStyles.title}>{hero.name}</h2>
     </section>
   );
 }
