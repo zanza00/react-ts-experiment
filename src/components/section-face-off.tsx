@@ -1,6 +1,7 @@
 import * as React from 'react';
 import classNames from 'classnames';
 import { hero } from '../models/hero'
+import { HeroCardVoter } from '../components/section-hero-card-voter'
 
 // const inlineStyles = {};
 
@@ -9,12 +10,7 @@ type params = {
   className?: string
 }
 
-const handleClick = (hero: hero, event:any) => {
-  console.log({hero, event});
-
-}
-
-export function HeroFaceOff({heroes, className = ''}: params) {
+export function HeroFaceOff({heroes, className = 'hero-face-off'}: params) {
 
   const mainClass = classNames(
     className.toString(),
@@ -24,12 +20,8 @@ export function HeroFaceOff({heroes, className = ''}: params) {
 
   return (
     <section className={mainClass}>
-      <div className="left">
-        <img src={leftHero.image} onClick={(event) => handleClick(leftHero, event)} />
-      </div>
-      <div className="right">
-        <img src={rightHero.image} onClick={(event) => handleClick(rightHero, event)}/>
-      </div>
+      <HeroCardVoter hero={leftHero} position={"left"} />
+      <HeroCardVoter hero={rightHero} position={"right"} />
     </section>
   );
 }
